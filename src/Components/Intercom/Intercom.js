@@ -14,6 +14,8 @@ class Intercom extends Component {
                 {NUMBERS.map(numbers => (
                     <button key={numbers} onClick={() => this.props.addNumber(numbers)}>{numbers}</button>
                 ))}
+                    <button>X</button>
+                    <button onClick={this.props.buttonConfirm}>E</button>
                 </div>
             </div>
         );
@@ -28,7 +30,8 @@ const mapStateToProps = state => {
 
 const  mapDispatchToProps = dispatch => {
   return {
-      addNumber: event => dispatch({type: 'NUMBERS', num: event})
+      addNumber: num => dispatch({type: 'ADD_NUMBERS', num: num}),
+      buttonConfirm: () => dispatch({type: 'CONFIRM_NUMBERS'}),
   }
 };
 

@@ -20,3 +20,11 @@ input {
     display: flex;
     flex-wrap: wrap;
 }
+.green {
+    background: green;
+    color: white;
+}
+.red {
+    background: red;
+    color: white;
+}
