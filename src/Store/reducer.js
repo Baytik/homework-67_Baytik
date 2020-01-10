@@ -18,7 +18,7 @@ const reducer = (state = initialState, action) => {
             if (state.number === '7777') {
                 return {...state, trueAnswer: 'Correct code', color: 'green'};
             } else {
-            return {...state, falseAnswer: 'Wrong code', color: 'red'};
+            return {...state, falseAnswer: 'Wrong code', color: 'red', number: ''};
             }
         case 'REMOVE_NUMBER':
            let sliceNumber = state.number.slice(0, -1);
