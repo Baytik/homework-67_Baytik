@@ -1,24 +1,28 @@
 const initialState = {
     number: '',
     color: '',
-    trueAnswer: 'Correct code',
-    falseAnswer: 'Wrong code',
+    trueAnswer: '',
+    falseAnswer: '',
+    disableButton: '',
 };
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_NUMBERS':
             if (state.number.length >= 4) {
-                alert('Вы ввели больше чем нужно');
+                return {...state, number: state.number, disableButton: 'disabled'}
             } else {
                 return {...state, number: state.number + action.num};
             }
         case 'CONFIRM_NUMBERS':
             if (state.number === '7777') {
-                return {...state, trueAnswer: state.trueAnswer, color: 'green'};
+                return {...state, trueAnswer: 'Correct code', color: 'green'};
             } else {
-            return {...state, falseAnswer: state.falseAnswer, color: 'red'};
+            return {...state, falseAnswer: 'Wrong code', color: 'red'};
             }
+        case 'REMOVE_NUMBER':
+           let sliceNumber = state.number.slice(0, -1);
+            return {...state, number: sliceNumber};
         default:
             return state;
     }

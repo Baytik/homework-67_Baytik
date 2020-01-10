@@ -28,3 +28,9 @@ input {
     background: red;
     color: white;
 }
+.block {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 50px;
+}
