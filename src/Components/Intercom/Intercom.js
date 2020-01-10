@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import './Intercom.css';
 import {NUMBERS} from "../../numbers";
 import {connect} from 'react-redux';
+
 class Intercom extends Component {
     render() {
         return (
             <div className="Intercom">
                 <div>
-                    <input type="text" className={this.props.color} defaultValue={this.props.number}/>
+                    <input type="password" className={this.props.color} defaultValue={this.props.number}/>
                 </div>
                 <div className="buttons">
                 {NUMBERS.map((number,key) => (
