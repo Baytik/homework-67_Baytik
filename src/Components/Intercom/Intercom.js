@@ -8,7 +8,7 @@ class Intercom extends Component {
         return (
             <div className="Intercom">
                 <div>
-                    <input type="text" value={this.props.number}/>
+                    <input type="text" className={this.props.color} value={this.props.number}/>
                 </div>
                 <div className="buttons">
                 {NUMBERS.map(numbers => (
@@ -16,6 +16,7 @@ class Intercom extends Component {
                 ))}
                     <button>X</button>
                     <button onClick={this.props.buttonConfirm}>E</button>
+                    <div className="block">{this.props.buttonConfirm}</div>
                 </div>
             </div>
         );
@@ -24,7 +25,10 @@ class Intercom extends Component {
 
 const mapStateToProps = state => {
   return {
-      number: state.number
+      number: state.number,
+      color: state.color,
+      trueAnswer: state.trueAnswer,
+      falseAnswer: state.falseAnswer,
   }
 };
 

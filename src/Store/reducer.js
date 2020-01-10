@@ -1,7 +1,8 @@
 const initialState = {
     number: '',
-    trueAnswer: 'green',
-    falseAnswer: 'red',
+    color: '',
+    trueAnswer: 'Correct code',
+    falseAnswer: 'Wrong code',
 };
 
 const reducer = (state = initialState, action) => {
@@ -14,11 +15,9 @@ const reducer = (state = initialState, action) => {
             }
         case 'CONFIRM_NUMBERS':
             if (state.number === '7777') {
-                alert('OK');
-                return {...state, trueAnswer: state.trueAnswer};
+                return {...state, trueAnswer: state.trueAnswer, color: 'green'};
             } else {
-                alert('NO');
-            return {...state, falseAnswer: state.falseAnswer};
+            return {...state, falseAnswer: state.falseAnswer, color: 'red'};
             }
         default:
             return state;
