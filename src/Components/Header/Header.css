@@ -1,0 +1,21 @@
+header {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 15px;
+    background: #ccc;
+}
+nav {
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+}
+.main-nav a {
+    color: black;
+    text-decoration: none;
+    font-size: 23px;
+}
+.main-nav a:hover {
+    padding: 5px;
+    background: orange;
+}
